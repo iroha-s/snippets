@@ -2,7 +2,7 @@
 
 SITE=$1
 
-echo $1
+echo $1 $1
 
 # mkdir -p /etc/haproxy/certs
 
