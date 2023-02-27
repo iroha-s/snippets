@@ -1,16 +1,25 @@
 #!/bin/sh
+main() {
+    haproxy $1
+}
 
-SITE=$1
+haproxy() {
+    # 引数の有無をチェックする
+    if [ $# != 1 ]; then
+        echo "missing argument"
+        # エラー終了
+        exit 1
+    fi
 
-echo $1
+    SITE=$1
 
-# mkdir -p /etc/haproxy/certs
+    mkdir -p /etc/haproxy/certs
 
-# # move to the correct let's encrypt directory
-# cd /etc/letsencrypt/live/$SITE
+    # cat files to make combined .pem for haproxy
+    cat /etc/letsencrypt/live/$SITE/fullchain.pem /etc/letsencrypt/live/$SITE/privkey.pem > /etc/haproxy/certs/$SITE.pem
 
-# # cat files to make combined .pem for haproxy
-# cat fullchain.pem privkey.pem > /etc/haproxy/certs/$SITE.pem
+    # reload haproxy
+    service haproxy reload
+}
 
-# # reload haproxy
-# service haproxy reload
+main $1
