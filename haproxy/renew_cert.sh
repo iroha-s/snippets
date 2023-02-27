@@ -19,7 +19,7 @@ haproxy() {
     cat /etc/letsencrypt/live/$SITE/fullchain.pem /etc/letsencrypt/live/$SITE/privkey.pem > /etc/haproxy/certs/$SITE.pem
 
     # reload haproxy
-    service haproxy reload
+    systemctl restart haproxy.service
 }
 
 main $1
