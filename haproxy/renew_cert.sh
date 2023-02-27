@@ -14,9 +14,10 @@ haproxy() {
     SITE=$1
 
     mkdir -p /etc/haproxy/certs
+    mkdir -p certs
 
     # cat files to make combined .pem for haproxy
-    cat /etc/letsencrypt/live/$SITE/fullchain.pem /etc/letsencrypt/live/$SITE/privkey.pem > /etc/haproxy/certs/$SITE.pem
+    cat /etc/letsencrypt/live/$SITE/fullchain.pem /etc/letsencrypt/live/$SITE/privkey.pem > ./certs/$SITE.pem
 
     # reload haproxy
     systemctl restart haproxy.service
