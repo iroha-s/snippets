@@ -1,5 +1,7 @@
 #!/bin/bash
 
+GIT_REPO_URL=https://raw.githubusercontent.com/iroha-s/snippet/develop/
+
 # 実行時に指定された引数の数、つまり変数 $# の値が 3 でなければエラー終了。
 # if [ $# -ne 2 ]; then
 #     echo "指定された引数は$#個です。" 1>&2
