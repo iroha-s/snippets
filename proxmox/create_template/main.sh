@@ -30,7 +30,7 @@ __EOT__
 VALUE=9000
 if [ "$template_id" -gt $VALUE ]; then
     # ここに VALUE の値が 0 より大きかった場合の処理を記載します。
-    source "$(dirname "$0")"/"$template_os.sh" $template_id
+    source $GIT_REPO_URL"$template_os.sh" $template_id
     # source "$(dirname "$0")"/"echo_test.sh" $template_id $template_os
 else
     echo -e "\033[31mcreate_id が $VALUE より小さいです。\033[m"
