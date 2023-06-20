@@ -5,6 +5,6 @@ qm set $1 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-$1-disk-0
 qm set $1 --ide2 local-lvm:cloudinit
 qm set $1 --boot c --bootdisk scsi0
 qm set $1 --serial0 socket --vga serial0
-qm set $1 --name $2
 qm template $1
+qm set $1 --name $2
 rm -f jammy-server-cloudimg-amd64.img
