@@ -1,6 +1,7 @@
 #!/bin/bash
 
-GIT_REPO_URL=https://raw.githubusercontent.com/iroha-s/snippet/develop/
+BRANCH=${1:-main}
+GIT_REPO_URL=https://raw.githubusercontent.com/iroha-s/snippet/${BRANCH}/
 
 # 実行時に指定された引数の数、つまり変数 $# の値が 3 でなければエラー終了。
 # if [ $# -ne 2 ]; then
@@ -30,7 +31,8 @@ __EOT__
 VALUE=9000
 if [ "$template_id" -gt $VALUE ]; then
     # ここに VALUE の値が 0 より大きかった場合の処理を記載します。
-    source $GIT_REPO_URL"$template_os.sh" $template_id
+    /bin/bash <(curl -s $GIT_REPO_URL"$template_os.sh" $template_id)
+    echo "$GIT_REPO_URL$template_os.sh $template_id"
     # source "$(dirname "$0")"/"echo_test.sh" $template_id $template_os
 else
     echo -e "\033[31mcreate_id が $VALUE より小さいです。\033[m"
