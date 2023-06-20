@@ -22,13 +22,6 @@ echo "branch名: $BRANCH"
 template_id=${1:-9001}
 template_os=${2:-ubuntu-jammy}
 
-cat <<__EOT__
-指定された引数は、
-  $template_id
-  $template_os
-の$#個です。
-__EOT__
-
 VALUE=9000
 if [ "$template_id" -gt $VALUE ]; then
     # ここに VALUE の値が 0 より大きかった場合の処理を記載します。
