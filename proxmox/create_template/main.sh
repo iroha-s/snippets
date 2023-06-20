@@ -2,6 +2,7 @@
 
 BRANCH=${3:-main}
 GIT_REPO_URL=https://raw.githubusercontent.com/iroha-s/snippet/${BRANCH}/
+echo "branch名: $BRANCH"
 
 # 実行時に指定された引数の数、つまり変数 $# の値が 3 でなければエラー終了。
 # if [ $# -ne 2 ]; then
