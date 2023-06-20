@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BRANCH=${1:-main}
+BRANCH=${3:-main}
 GIT_REPO_URL=https://raw.githubusercontent.com/iroha-s/snippet/${BRANCH}/
 
 # 実行時に指定された引数の数、つまり変数 $# の値が 3 でなければエラー終了。
