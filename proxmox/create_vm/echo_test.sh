@@ -1,0 +1,1 @@
+echo "id:$1 の template_id:$template のVMを作ります。"

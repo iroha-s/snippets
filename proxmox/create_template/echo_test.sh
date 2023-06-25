@@ -1,0 +1,1 @@
+echo "id $1 Templateを作ります。"
