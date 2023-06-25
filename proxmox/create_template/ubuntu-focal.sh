@@ -7,4 +7,4 @@ qm set $1 --boot c --bootdisk scsi0
 qm set $1 --serial0 socket --vga serial0
 qm template $1
 qm set $1 --name $2
-rm -f jammy-server-cloudimg-amd64.img
+rm -f focal-server-cloudimg-amd64.img
