@@ -2,6 +2,12 @@
 
 set -eu
 
+# アップグレードした場合の警告表示を無効化
+cat << 'EOF' > /etc/needrestart/conf.d/99_restart.conf
+$nrconf{kernelhints} = '0';
+$nrconf{restart} = 'a';
+EOF
+
 # Install Containerd
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
 overlay
