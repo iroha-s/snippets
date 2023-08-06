@@ -55,11 +55,11 @@ sudo mkdir -p /usr/share/keyrings
 sudo sh -c "curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | gpg --dearmor -o /usr/share/keyrings/libcontainers-archive-keyring.gpg"
 sudo sh -c "curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/Release.key | gpg --dearmor -o /usr/share/keyrings/libcontainers-crio-archive-keyring.gpg"
 
-apt-get update
-apt-get install cri-o cri-o-runc
+sudo apt-get update
+sudo apt-get install cri-o cri-o-runc
 
 # dns 削除
-rm -rf /etc/cni/net.d/*
+sudo rm -rf /etc/cni/net.d/*
 
 # cri-o 起動
 sudo systemctl daemon-reload
