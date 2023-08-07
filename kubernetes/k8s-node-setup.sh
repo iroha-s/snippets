@@ -56,7 +56,7 @@ sudo sh -c "curl -L https://download.opensuse.org/repositories/devel:/kubic:/lib
 sudo sh -c "curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/Release.key | gpg --dearmor -o /usr/share/keyrings/libcontainers-crio-archive-keyring.gpg"
 
 sudo apt-get update
-sudo apt-get install cri-o cri-o-runc
+sudo apt-get install -y cri-o cri-o-runc
 
 # dns 削除
 sudo rm -rf /etc/cni/net.d/*
