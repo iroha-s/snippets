@@ -31,7 +31,7 @@ sudo sysctl --system
 swapoff -a
 
 # Google Cloudの公開鍵をダウンロード
-curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --no-tty --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
 
 # Kubernetesの aptリポジトリを追加
 echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
