@@ -79,4 +79,4 @@ kernel.keys.root_maxkeys = 1000000
 kernel.keys.root_maxbytes = 25000000
 net.ipv4.conf.*.rp_filter = 0
 EOF
-sysctl --system
+sudo sysctl --system
