@@ -58,6 +58,26 @@ sudo sh -c "curl -L https://download.opensuse.org/repositories/devel:/kubic:/lib
 sudo apt-get update
 sudo apt-get install -y cri-o cri-o-runc
 
+# cilium crio bpf
+cat <<EOF | sudo tee /etc/systemd/system/sys-fs-bpf.mount
+[Unit]
+Description=Cilium BPF mounts
+Documentation=https://docs.cilium.io/
+DefaultDependencies=no
+Before=local-fs.target umount.target
+After=swap.target
+
+[Mount]
+What=bpffs
+Where=/sys/fs/bpf
+Type=bpf
+Options=rw,nosuid,nodev,noexec,relatime,mode=700
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
 # dns 削除
 sudo rm -rf /etc/cni/net.d/*
 
