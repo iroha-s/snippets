@@ -44,7 +44,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 # CRI-Oインストール
 # このバージョンは以下を参照して任意のものに変えてください
 # https://cri-o.github.io/cri-o/
-export VERSION=1.27
+export VERSION=1.28
 # https://github.com/cri-o/cri-o/blob/main/install.md#apt-based-operating-systems
 export OS=xUbuntu_22.04
 
