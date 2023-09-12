@@ -6,7 +6,7 @@ echo "branch名: $BRANCH"
 
 template_id=${1:-9001}
 template_os=${2:-ubuntu-jammy}
-storage=${3:-local-lvm}
+storage=${4:-local-lvm}
 VALUE=9000
 
 echo ""
