@@ -8,6 +8,13 @@ template_id=${1:-9001}
 template_os=${2:-ubuntu-jammy}
 storage=${3:-local-lvm}
 VALUE=9000
+
+echo ""
+echo "template_id: ${template_id}"
+echo "template_os: ${template_os}"
+echo "storage: ${storage}"
+echo ""
+
 if [ "$template_id" -gt $VALUE ]; then
     # ここに VALUE の値が 0 より大きかった場合の処理を記載します。
     echo "${GIT_REPO_URL}/proxmox/create_template/${template_os}.sh ${template_id} ${template_os} ${storage}"
